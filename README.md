@@ -10,7 +10,7 @@
 ![Static Badge](https://img.shields.io/badge/Git-%2061DBFB?style=for-the-badge&logo=git&logoColor=black&color=lightgreen)
 ---
 <p align="center">
-  <img src="https://github.com/ScarFace163/vihub/src/main/resources/viHubLogoJPEG.jpg" />
+  <img src="https://github.com/ScarFace163/vihub/blob/main/src/main/resources/viHubLogoJPEG.jpg"/>
 </p>
 
 ---

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html
+        xmlns:th="http://www.thymeleaf.org"
+        xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+        layout:decorate="~{layout}">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>My Subscriptions</title>
+    <link rel="stylesheet" th:href="@{/bootstrap.css}" />
+    <style>
+        .channel-avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: center;
+            border: 3px solid #f8f9fa;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .channel-card {
+            transition: transform 0.2s;
+            cursor: pointer;
+            border: none;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            background: #ffffff;
+        }
+        .channel-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+        }
+        .card-body {
+            padding: 2rem 1.5rem;
+        }
+        .channel-avatar-wrapper {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 1.5rem;
+            position: relative;
+            overflow: hidden;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+<main class="flex-shrink-0">
+    <section layout:fragment="body" class="py-5">
+        <div class="py-5 container py-4 mt-sm-0 mb-sm-0 px-4 px-lg-5">
+            <div class="text-center text-black">
+                <h1 class="display-4 fw-bolder">My Subscriptions</h1>
+                <p class="lead fw-normal text-black-50 mb-0">Channels you follow:</p>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row g-4">
+                <!-- Example channel card - Replace with th:each when backend is ready -->
+                <div class="col-md-6 col-lg-4" th:each="channel : ${subscribedChannels}">
+                    <div class="card h-100 channel-card">
+                        <div class="card-body text-center">
+                            <div class="channel-avatar-wrapper">
+                                <img class="channel-avatar" 
+                                     th:src="${channel.avatarUrl}"
+                                     src="https://www.pngkit.com/png/full/448-4484625_sign-up-mr-beast-logo.png" 
+                                     alt="Channel Avatar"/>
+                            </div>
+                            <h5 class="card-title" th:text="${channel.name}">Channel Name</h5>
+                            <p class="card-text text-muted" th:text="${channel.subscribersCount + ' subscribers'}">1000 subscribers</p>
+                            <p class="card-text small" th:text="${channel.description}">Channel description goes here...</p>
+                            <a th:href="@{/channel/{id}(id=${channel.id})}" class="btn btn-primary">View Channel</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Placeholder cards for demonstration -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 channel-card">
+                        <div class="card-body text-center">
+                            <div class="channel-avatar-wrapper">
+                                <img class="channel-avatar" src="https://cybersport-img.cdnvideo.ru/images/og-jpg/plain/64/64ee2d8392f4a27c5e2d43bcf916eeef.jpg" alt="Channel Avatar"/>
+                            </div>
+                            <h5 class="card-title">Tech Channel</h5>
+                            <p class="card-text text-muted">5.2K subscribers</p>
+                            <p class="card-text small">The best tech reviews and tutorials</p>
+                            <a href="#" class="btn btn-primary">View Channel</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 channel-card">
+                        <div class="card-body text-center">
+                            <div class="channel-avatar-wrapper">
+                                <img class="channel-avatar" src="https://i.pinimg.com/originals/7c/a0/ef/7ca0ef4cfa0f732fa0ed3173f3715f65.png" alt="Channel Avatar"/>
+                            </div>
+                            <h5 class="card-title">Gaming Zone</h5>
+                            <p class="card-text text-muted">10K subscribers</p>
+                            <p class="card-text small">Daily gaming content and walkthroughs</p>
+                            <a href="#" class="btn btn-primary">View Channel</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 channel-card">
+                        <div class="card-body text-center">
+                            <div class="channel-avatar-wrapper">
+                                <img class="channel-avatar" src="http://img.gazeta.ru/files3/931/15945931/IqlKuA2McGE-pic_32ratio_900x600-900x600-60553.jpg" alt="Channel Avatar"/>
+                            </div>
+                            <h5 class="card-title">Cooking Master</h5>
+                            <p class="card-text text-muted">7.8K subscribers</p>
+                            <p class="card-text small">Delicious recipes and cooking tips</p>
+                            <a href="#" class="btn btn-primary">View Channel</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+</body>
+</html>

@@ -7,37 +7,62 @@
     <link rel="stylesheet" th:href="@{/bootstrap.css}"/>
     <style>
         @import "/stylesheet/bootstrap.css";
+        
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+        
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        
+        #main-content {
+            flex: 1 0 auto;
+        }
+        
+        footer {
+            flex-shrink: 0;
+        }
     </style>
 </head>
 
-<nav id="navbar" class="height90">
-  <a th:href="@{/home}">
-    <img id="logo-at-navbar" th:src="@{../images/ViHubLogoWhite.png}" alt="ViHub Logo">
-  </a>
-  <div id="sections">
-    <a th:href="@{/add_video}">+</a>
-    <a th:href="@{/subscriptions}">Подписки</a>
-    <a th:href="@{/recommendations}">Рекомендации</a>
-    <a th:href="@{/profile}">Профиль</a>
-  </div>
-</nav>
-<body layout:fragment="body"></body>
-<footer class="bg-blue py-4 mt-auto height90">
-    <div class="container px-5">
-        <div class="row align-items-center justify-content-between flex-column flex-sm-row">
-            <div class="col-auto">
-                <div class="small m-0 text-white">Copyright &copy; Your ViHub 2024</div>
-            </div>
-            <div class="col-auto">
-                <a class="link-light small" href="#!">Privacy</a>
-                <span class="text-white mx-1">&middot;</span>
-                <a class="link-light small" href="#!">Terms</a>
-                <span class="text-white mx-1">&middot;</span>
-                <a class="link-light small" href="#!">Contact</a>
+<body>
+    <nav id="navbar" class="height90">
+        <a th:href="@{/home}">
+            <img id="logo-at-navbar" th:src="@{../images/ViHubLogoWhite.png}" alt="ViHub Logo">
+        </a>
+        <div id="sections">
+            <a th:href="@{/add_video}">+</a>
+            <a th:href="@{/subscriptions}">Подписки</a>
+            <a th:href="@{/recommendations}">Рекомендации</a>
+            <a th:href="@{/profile}">Профиль</a>
+        </div>
+    </nav>
+    
+    <div id="main-content">
+        <div layout:fragment="body"></div>
+    </div>
+
+    <footer class="bg-blue py-4 height90">
+        <div class="container px-5">
+            <div class="row align-items-center justify-content-between flex-column flex-sm-row">
+                <div class="col-auto">
+                    <div class="small m-0 text-white">Copyright &copy; Your ViHub 2024</div>
+                </div>
+                <div class="col-auto">
+                    <a class="link-light small" href="#!">Privacy</a>
+                    <span class="text-white mx-1">&middot;</span>
+                    <a class="link-light small" href="#!">Terms</a>
+                    <span class="text-white mx-1">&middot;</span>
+                    <a class="link-light small" href="#!">Contact</a>
+                </div>
             </div>
         </div>
-    </div>
-</footer>
+    </footer>
+</body>
 </html>
 
 

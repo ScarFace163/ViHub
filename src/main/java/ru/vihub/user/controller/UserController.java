@@ -58,8 +58,8 @@ public class UserController {
           && !Objects.equals(userService.findCurrentUser().getUsername(), userDto.getUsername())) {
         model.addAttribute("error", "Пользовтаель с таким именем уже существует");
         model.addAttribute("userForDisplay", userService.findCurrentUser());
-        return "profile-edit";
-        }
+        return "profile-edit";        }
+
     } catch(EntityNotFoundException ex){
       log.info("userDto {}", userDto);
       userService.updateUser(userDto);

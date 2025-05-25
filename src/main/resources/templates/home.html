@@ -12,34 +12,75 @@
     <link rel="stylesheet" th:href="@{/bootstrap.css}" />
     <style>
         @import "/stylesheet/bootstrap.css";
+        
+        .welcome-section {
+            padding: 120px 0;
+            background-color: #f8f9fa;
+        }
+        
+        .welcome-text {
+            font-size: 3.5rem;
+            font-weight: 300;
+            line-height: 1.2;
+            color: #1e3c72;
+            margin-bottom: 1.5rem;
+        }
+        
+        .feature-box {
+            padding: 2rem;
+            margin: 1rem 0;
+            border-radius: 10px;
+            transition: transform 0.2s ease;
+        }
+        
+        .feature-box:hover {
+            transform: translateY(-5px);
+        }
+        
+        .feature-title {
+            color: #1e3c72;
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+        
+        .feature-text {
+            color: #6c757d;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
     </style>
 </head>
 <body class="d-flex flex-column h-100">
 <main class="flex-shrink-0">
-    <section layout:fragment="body" class="py-5">
-        <section class="py-5">
-            <div class="container px-5">
-                <div class="text-center mb-5 mt-0">
-                    <h1 class="fw-bolder">Welcome to ViHub</h1>
-                </div>
-                <div id="" class="row text-size-24 gx-5">
-                    <p>Your go-to streaming service for uploading and watching videos!</p>
-
-                    <h2>Key Features:</h2>
-                    <ul>
-                        <li>Easy registration and authentication process</li>
-                        <li>Seamless video uploading to our secure server</li>
-                        <li>Smooth video playback for your viewing pleasure</li>
-                        <li>Convenient video search based on different criteria</li>
-                        <li>User-friendly profile management for personalized experience</li>
-                        <li>Ability to rate and comment on videos, sharing your thoughts with the community</li>
-                    </ul>
-
-                    <p>Experience the best in video streaming with ViHub. Sign up now and start exploring our vast
-                        library of videos!</p>
+    <section layout:fragment="body">
+        <div class="welcome-section">
+            <div class="container">
+                <div class="row justify-content-center text-center">
+                    <div class="col-lg-8">
+                        <h1 class="welcome-text">Делись видео.<br>Вдохновляй других.</h1>
+                        <p class="lead mb-5" style="color: #6c757d;">Загружай, смотри и обсуждай видео в сообществе единомышленников</p>
+                        <a href="/auth/register" class="btn btn-primary btn-lg px-5">Начать</a>
+                    </div>
                 </div>
             </div>
-        </section>
+        </div>
+
+        <div class="container py-5">
+            <div class="row justify-content-center">
+                <div class="col-md-4">
+                    <div class="feature-box text-center">
+                        <h3 class="feature-title">Простая загрузка</h3>
+                        <p class="feature-text">Загружай видео в пару кликов и делись ими со всем миром</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-box text-center">
+                        <h3 class="feature-title">Комментируй</h3>
+                        <p class="feature-text">Обсуждай видео и находи единомышленников</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 </main>
 </body>

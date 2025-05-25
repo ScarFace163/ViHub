@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Slf4j
 public class SubscriptionsController {
     @GetMapping("/subscriptions")
-    public String getProfile(Model model) {
+    public String getSubscriptions(Model model) {
         return "subscriptions";
     }
 }
